@@ -23,6 +23,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Main:
+    'apps.core',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +64,7 @@ DATABASES = {
         'NAME':         'nouvellie', 
         'PORT':         '3306', 
         'USER':         'nouvellie', 
-        'PASSWORD':     '3341', 
+        'PASSWORD':     'testing3341', 
         'HOST':         '127.0.0.1', 
     }, 
 } 
