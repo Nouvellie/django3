@@ -33,7 +33,7 @@ class ColorListView(ListView):
 
 	context_object_name = 'colors'
 	model = Color
-	paginate_by = 2
+	paginate_by = 1
 	template_name = 'core/color_list.html'
 
 

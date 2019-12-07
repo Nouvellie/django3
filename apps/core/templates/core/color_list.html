@@ -12,7 +12,24 @@
 			<br>
 		{% endfor %}
 	</div>
+	<br><br><br><br><br><br><br><br>
 	<div class="text-center">
 		<a href="{% url 'home' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">HOME</a>
+	</div>
+	<div class="text-center">
+	    <span class="step-links">
+	    	<br>
+	        {% if page_obj.has_previous %}
+	            <a href="?page=1" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">&laquo; first</a>
+	            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">previous</a>
+	        {% endif %}
+	        <span class="current">
+	            <button class="btn btn-success">{{page_obj.number}}/{{page_obj.paginator.num_pages}}</button>
+	        </span>
+	        {% if page_obj.has_next %}
+	            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">next</a>
+	            <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">last &raquo;</a>
+	        {% endif %}
+	    </span>
 	</div>
 {% endblock %}

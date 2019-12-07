@@ -2,7 +2,7 @@
 ## TESTING AND INCREASING KNOWLEDGE
 
 ## Requirements
-- [Libraries.](https://github.com/Nouvellie/django3/blob/master/requirements/nouvellielibs.yml)
+- [Libraries (conda).](https://github.com/Nouvellie/django3/blob/master/requirements/nouvellielibs.yml)
 
 
 <br><br><p align="center">
