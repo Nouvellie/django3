@@ -5,4 +5,16 @@ __created__     =       "12/06/2019 23:27"
 ''' 
 
 
+from .models import Color
 from django.contrib import admin
+
+
+class ColorAdmin(admin.ModelAdmin):
+
+	list_display = (
+		'color_id',
+		'color_name',
+	)
+
+
+admin.site.register(Color, ColorAdmin)

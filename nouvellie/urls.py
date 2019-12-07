@@ -6,9 +6,20 @@ __created__     =       "12/06/2019 23:27"
 
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 
-urlpatterns = [
-    path('admin/',		 	admin.site.urls),
-]
+urlpatterns = [ 
+ 
+    # Admin app. 
+    path(
+        'nouvellie-admin/',
+        admin.site.urls
+    ), 
+
+    # Main app. 
+    path(
+        '',
+        include('apps.core.urls')
+    ), 
+] 

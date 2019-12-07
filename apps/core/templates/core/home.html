@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+	DJANGO
+{% endblock%}
+
+{% block content %}
+	<h1>DJANGO</h1>
+	<br>
+	<h3>Testing and increasing knowledge</h3>
+	<a href="{% url 'colors' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1);">COLORS</a>
+{% endblock %}
