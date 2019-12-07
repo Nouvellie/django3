@@ -1,7 +1,7 @@
 # DJANGO 3
 ## TESTING AND INCREASING KNOWLEDGE
 
-# Requirements
+## Requirements
 - [Libraries.](https://github.com/Nouvellie/django3/blob/master/requirements/nouvellielibs.yml)
 
 
