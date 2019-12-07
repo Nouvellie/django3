@@ -1,8 +1,8 @@
-# DOCKER MASTERY
-## THE COMPLETE TOOLSET FROM A DOCKER CAPTAIN
+# DJANGO 3
+## TESTING AND INCREASING KNOWLEDGE
 
 # Requirements
-
+- [Libraries.](https://github.com/Nouvellie/django3/blob/master/requirements/nouvellielibs.yml)
 
 
 <br><br><p align="center">
