@@ -12,5 +12,7 @@
 		<a href="{% url 'colors' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">COLORS</a>
 		<br><br>
 		<a href="{% url 'colorslist' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">LIST</a>
+		<br><br>		
+		<a href="{% url 'colorsdetail' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">DETAIL</a>
 	</div>
 {% endblock %}
