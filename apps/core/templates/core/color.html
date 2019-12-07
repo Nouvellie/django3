@@ -1,4 +1,11 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-
+{% block content %}
+	{% for color in colors %}
+		<div class="text-center">
+			<h3>{{color}}</h3>
+			<br>
+		</div>
+	{% endfor %}
+{% endblock %}
