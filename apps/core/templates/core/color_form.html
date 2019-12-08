@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+	COLORSFORM
+{% endblock%}
+
+{% block content %}
+{{form.as_p}}
+<button class="button button-primary" type="submit">CREATE</button>
+{% endblock%}

@@ -5,13 +5,16 @@ __created__     =       "12/06/2019 23:27"
 ''' 
 
 
+from .forms import ColorForm
 from .models import Color
 from django.shortcuts import (
 	get_object_or_404,
 	render,
 )
+from django.urls import reverse_lazy
 from django.views.generic import (
 	DetailView,
+	FormView,
 	ListView,
 	TemplateView,
 )
@@ -63,3 +66,21 @@ class ColorDetailView(DetailView):
 	def get_object(self, *args, **kwargs):
 		color_id = self.kwargs.get('color_id')
 		return get_object_or_404(Color, color_id=color_id)
+
+
+class ColorFormView(FormView):
+
+	form_class = ColorForm
+	template_name = 'core/color_form.html'
+
+
+	# def get_context_data(self, *args, **kwargs):
+	#     context = super(SourceFileView, self).get_context_data(**kwargs)
+	#     return context
+
+	def form_valid(self, form):
+		form.save(commit=True)
+		return super(ColorFormView, self).form_valid(form)
+
+	def get_success_url(self):
+		return reverse_lazy('home')
