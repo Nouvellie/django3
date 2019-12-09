@@ -6,6 +6,13 @@
 {% endblock%}
 
 {% block content %}
-{{form.as_p}}
-<button class="button button-primary" type="submit">CREATE</button>
+	<form action="" method="POST" class="text-center">
+		{% csrf_token %}
+		<input type="text" name="color_name">
+		<input type="submit" value="ADD COLOR">
+	</form> 
+	<br><br><br><br><br><br><br><br>
+	<div class="text-center">
+		<a href="{% url 'home' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">HOME</a>
+	</div>
 {% endblock%}
