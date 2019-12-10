@@ -14,6 +14,8 @@ from .views import (
     ColorTemplateView,
     ColorUpdateView,
     HomeTemplateView,
+    SimpleRedirectView,
+    SimpleView,
 )
 from django.contrib import admin 
 from django.urls import path
@@ -60,5 +62,15 @@ urlpatterns = [
         'colors/detail/<color_id>/delete',
         ColorDeleteView.as_view(),
         name = "colorsdelete"
+    ),
+    path(
+        'simpleview',
+        SimpleView.as_view(),
+        name = "simpleview"
+    ),
+    path(
+        'simpleredirectview',
+        SimpleRedirectView.as_view(),
+        name = "simpleredirectview"
     ),
 ] 

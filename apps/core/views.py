@@ -8,12 +8,16 @@ __created__     =       "12/06/2019 23:27"
 from .forms import ColorForm
 from .models import Color
 from django.contrib import messages
-from django.http import Http404
+from django.http import (
+	Http404,
+	HttpResponse,
+)
 from django.shortcuts import (
 	get_object_or_404,
 	render,
 )
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import (
 	CreateView,
 	DeleteView,
@@ -23,6 +27,18 @@ from django.views.generic import (
 	TemplateView,
 	UpdateView,
 )
+from django.views.generic.base import RedirectView
+
+
+class SimpleView(View):
+
+	def get(self, request, *args, **kwargs):
+		return HttpResponse("Nouvellie page!")
+		
+
+class SimpleRedirectView(RedirectView):
+
+	url = 'https://www.google.cl'
 
 
 class HomeTemplateView(TemplateView):
