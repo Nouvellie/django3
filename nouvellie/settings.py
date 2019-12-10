@@ -12,6 +12,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'u1sut*fwo+@a(_a!rd9lf*-pc)#@1p#20blnh@(9_l480&0c*j'
 
+'''
+CREDENTIALS:
+
+USERNAME = nouvellie
+PASSWORD = testing3341
+'''
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -68,6 +75,14 @@ DATABASES = {
         'HOST':         '127.0.0.1', 
     }, 
 } 
+
+''' 
+MYSQL USER CREATION (LOCALHOST):
+
+CREATE USER 'nouvellie'@'%' identified by 'testing3341';
+ALTER USER 'nouvellie'@'%' identified WITH mysql_native_password by 'testing3341';
+GRANT ALL PRIVILEGES ON *.* to 'nouvellie'@'%';
+'''
  
 AUTH_PASSWORD_VALIDATORS = [
     {

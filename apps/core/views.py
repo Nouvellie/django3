@@ -16,6 +16,7 @@ from django.shortcuts import (
 from django.urls import reverse_lazy
 from django.views.generic import (
 	CreateView,
+	DeleteView,
 	DetailView,
 	FormView,
 	ListView,
@@ -75,6 +76,7 @@ class ColorDetailView(DetailView):
 class ColorFormView(FormView):
 
 	form_class = ColorForm
+	success_url = reverse_lazy('home')
 	template_name = 'core/color_form.html'
 
 
@@ -82,8 +84,8 @@ class ColorFormView(FormView):
 		form.save(commit=True)
 		return super(ColorFormView, self).form_valid(form)
 
-	def get_success_url(self):
-		return reverse_lazy('home')
+	# def get_success_url(self):
+	# 	return reverse_lazy('home')
 
 
 class ColorCreateView(CreateView):
@@ -106,6 +108,18 @@ class ColorUpdateView(UpdateView):
 	def form_valid(self, form):
 		return super().form_valid(form)
 
+	def get_object(self, *args, **kwargs):
+		color_id = self.kwargs.get('color_id')
+		return get_object_or_404(Color, color_id=color_id)
+
+
+class ColorDeleteView(DeleteView):
+
+	form_class = ColorForm
+	queryset = Color.objects.all()
+	success_url = reverse_lazy('home')
+	template_name = 'core/color_delete.html'
+	
 	def get_object(self, *args, **kwargs):
 		color_id = self.kwargs.get('color_id')
 		return get_object_or_404(Color, color_id=color_id)
