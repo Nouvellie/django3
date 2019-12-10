@@ -10,6 +10,22 @@
 		{% csrf_token %}
 		<input type="text" name="color_name">
 		<input type="submit" value="ADD COLOR">
+		{% if form.errors %}
+		    {% for field in form %}
+		        {% for error in field.errors %}
+		        	<br><br>
+		            <div class="text-center">
+		            	<h4 style="color: red; background-color: #f8d7da; display: inline;">&nbsp;&nbsp;{{ error|escape }}&nbsp;&nbsp;</h4>
+		            </div>
+		        {% endfor %}
+		    {% endfor %}
+		    {% for error in form.non_field_errors %}
+		    	<br><br>
+		        <div class="alert alert-danger">
+		            <h4 style="color: red; background-color: #f8d7da; display: inline;">&nbsp;&nbsp;{{ error|escape }}&nbsp;&nbsp;</h4>
+		        </div>
+		    {% endfor %}
+		{% endif %}
 	</form> 
 	<br><br><br><br><br><br><br><br>
 	<div class="text-center">

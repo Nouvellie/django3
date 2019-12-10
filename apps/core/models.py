@@ -20,6 +20,7 @@ class Color(models.Model):
 		max_length = 20,
 		blank = True, 
 		null = True,
+		unique = True,
 		db_column = 'COLOR_NAME',
 		verbose_name = 'NAME',
 	)

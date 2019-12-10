@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+	ERROR
+{% endblock%}
+
+{% block content %}
+	<div class="text-center">
+		<h1>PAGE NOT FOUND (404)</h1>
+		<br><br>
+		{{form_error}}
+	</div>
+{% endblock %}

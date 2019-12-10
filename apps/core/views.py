@@ -7,12 +7,15 @@ __created__     =       "12/06/2019 23:27"
 
 from .forms import ColorForm
 from .models import Color
+from django.contrib import messages
+from django.http import Http404
 from django.shortcuts import (
 	get_object_or_404,
 	render,
 )
 from django.urls import reverse_lazy
 from django.views.generic import (
+	CreateView,
 	DetailView,
 	FormView,
 	ListView,
@@ -74,13 +77,15 @@ class ColorFormView(FormView):
 	template_name = 'core/color_form.html'
 
 
-	# def get_context_data(self, *args, **kwargs):
-	#     context = super(SourceFileView, self).get_context_data(**kwargs)
-	#     return context
-
 	def form_valid(self, form):
 		form.save(commit=True)
 		return super(ColorFormView, self).form_valid(form)
 
 	def get_success_url(self):
 		return reverse_lazy('home')
+		
+
+class ColorCreateView(CreateView):
+
+	template_name = 'core/color_create.html'
+
