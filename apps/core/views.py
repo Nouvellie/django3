@@ -83,9 +83,13 @@ class ColorFormView(FormView):
 
 	def get_success_url(self):
 		return reverse_lazy('home')
-		
+
 
 class ColorCreateView(CreateView):
 
+	form_class = ColorForm
+	queryset = Color.objects.all()
 	template_name = 'core/color_create.html'
 
+	def form_valid(self, form):
+		return super().form_valid(form)

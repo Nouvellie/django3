@@ -6,6 +6,7 @@ __created__     =       "12/07/2019 01:05"
  
 
 from .views import (
+    ColorCreateView,
     ColorDetailView,
     ColorFormView,
     ColorListView,
@@ -42,5 +43,10 @@ urlpatterns = [
         'colors/form',
         ColorFormView.as_view(),
         name = "colorsform"
+    ),
+    path(
+        'colors/create',
+        ColorCreateView.as_view(),
+        name = "colorscreate"
     ),
 ] 

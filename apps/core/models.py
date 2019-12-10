@@ -6,6 +6,7 @@ __created__     =       "12/06/2019 23:27"
 
 
 from django.db import models
+from django.urls import reverse
 
 
 class Color(models.Model):
@@ -35,3 +36,6 @@ class Color(models.Model):
 
 	def __str__(self):
 		return self.color_name
+
+	def get_absolute_url(self):
+		return reverse("colorsdetail", kwargs = {"color_id": self.color_id})
