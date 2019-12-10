@@ -11,6 +11,7 @@ from .views import (
     ColorFormView,
     ColorListView,
     ColorTemplateView,
+    ColorUpdateView,
     HomeTemplateView,
 )
 from django.contrib import admin 
@@ -48,5 +49,10 @@ urlpatterns = [
         'colors/create',
         ColorCreateView.as_view(),
         name = "colorscreate"
+    ),
+    path(
+        'colors/detail/<color_id>/update',
+        ColorUpdateView.as_view(),
+        name = "colorsupdate"
     ),
 ] 

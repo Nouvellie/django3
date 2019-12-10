@@ -18,5 +18,7 @@
 		<a href="{% url 'colorsform' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">FORM</a>
 		<br><br>		
 		<a href="{% url 'colorscreate' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">CREATE</a>
+		<br><br>		
+		<a href="{% url 'colorsupdate' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">UPDATE</a>
 	</div>
 {% endblock %}

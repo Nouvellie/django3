@@ -9,7 +9,8 @@
 	<form action="" method="POST" class="text-center">
 		{% csrf_token %}
 		<input type="text" name="color_name">
-		<input type="submit" value="ADD COLOR">
+		<br><br>
+		<input type="submit" value="ADD COLOR" class="btn btn-success">
 		{% if form.errors %}
 		    {% for field in form %}
 		        {% for error in field.errors %}
@@ -27,8 +28,8 @@
 		    {% endfor %}
 		{% endif %}
 	</form> 
-	<br><br><br><br><br><br><br><br>
 	<div class="text-center">
+		<br><br><br><br>
 		<a href="{% url 'home' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">HOME</a>
 	</div>
 {% endblock%}

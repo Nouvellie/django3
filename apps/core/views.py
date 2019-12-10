@@ -20,6 +20,7 @@ from django.views.generic import (
 	FormView,
 	ListView,
 	TemplateView,
+	UpdateView,
 )
 
 
@@ -93,3 +94,18 @@ class ColorCreateView(CreateView):
 
 	def form_valid(self, form):
 		return super().form_valid(form)
+
+
+class ColorUpdateView(UpdateView):
+
+	form_class = ColorForm
+	queryset = Color.objects.all()
+	template_name = 'core/color_update.html'
+
+
+	def form_valid(self, form):
+		return super().form_valid(form)
+
+	def get_object(self, *args, **kwargs):
+		color_id = self.kwargs.get('color_id')
+		return get_object_or_404(Color, color_id=color_id)
