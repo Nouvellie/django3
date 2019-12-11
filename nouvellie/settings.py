@@ -33,6 +33,9 @@ INSTALLED_APPS = [
 
     # Main:
     'apps.core',
+
+    # Accounts.
+    'apps.registration',
 ]
 
 MIDDLEWARE = [

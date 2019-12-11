@@ -17,7 +17,6 @@ from .views import (
     SimpleRedirectView,
     SimpleView,
 )
-from django.contrib import admin 
 from django.urls import path
  
  
@@ -39,7 +38,7 @@ urlpatterns = [
         name = "colorslist"
     ),
     path(
-        'colors/detail/<color_id>',
+        'colors/detail/<int:pk>',
         ColorDetailView.as_view(),
         name = "colorsdetail"
     ),
@@ -54,12 +53,12 @@ urlpatterns = [
         name = "colorscreate"
     ),
     path(
-        'colors/detail/<color_id>/update',
+        'colors/detail/<int:pk>/update',
         ColorUpdateView.as_view(),
         name = "colorsupdate"
     ),
     path(
-        'colors/detail/<color_id>/delete',
+        'colors/detail/<int:pk>/delete',
         ColorDeleteView.as_view(),
         name = "colorsdelete"
     ),

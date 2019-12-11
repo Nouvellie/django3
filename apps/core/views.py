@@ -57,6 +57,7 @@ class ColorTemplateView(TemplateView):
 	template_name = 'core/color.html'
 
 
+
 	def get_context_data(self, **kwargs):
 		context = super(ColorTemplateView, self).get_context_data(**kwargs)
 		context['colors'] = Color.objects.all()
@@ -71,22 +72,11 @@ class ColorListView(ListView):
 	template_name = 'core/color_list.html'
 
 
-	def get_context_data(self, **kwargs):
-		context = super(ColorListView, self).get_context_data(**kwargs)
-		return context
-
-
 class ColorDetailView(DetailView):
 
 	context_object_name = 'colors'
 	model = Color
-	slug_field = 'color_id'
 	template_name = 'core/color_detail.html'
-
-
-	def get_object(self, *args, **kwargs):
-		color_id = self.kwargs.get('color_id')
-		return get_object_or_404(Color, color_id=color_id)
 
 
 class ColorFormView(FormView):
@@ -99,9 +89,6 @@ class ColorFormView(FormView):
 	def form_valid(self, form):
 		form.save(commit=True)
 		return super(ColorFormView, self).form_valid(form)
-
-	# def get_success_url(self):
-	# 	return reverse_lazy('home')
 
 
 class ColorCreateView(CreateView):
@@ -124,10 +111,6 @@ class ColorUpdateView(UpdateView):
 	def form_valid(self, form):
 		return super().form_valid(form)
 
-	def get_object(self, *args, **kwargs):
-		color_id = self.kwargs.get('color_id')
-		return get_object_or_404(Color, color_id=color_id)
-
 
 class ColorDeleteView(DeleteView):
 
@@ -135,7 +118,3 @@ class ColorDeleteView(DeleteView):
 	queryset = Color.objects.all()
 	success_url = reverse_lazy('home')
 	template_name = 'core/color_delete.html'
-	
-	def get_object(self, *args, **kwargs):
-		color_id = self.kwargs.get('color_id')
-		return get_object_or_404(Color, color_id=color_id)

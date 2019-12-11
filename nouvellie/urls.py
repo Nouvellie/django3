@@ -14,12 +14,18 @@ urlpatterns = [
     # Admin app. 
     path(
         'nouvellie-admin/',
-        admin.site.urls
+        admin.site.urls,
     ), 
 
     # Main app. 
     path(
         '',
-        include('apps.core.urls')
+        include('apps.core.urls'),
+    ), 
+
+    # Accounts.
+    path(
+        '',
+        include('apps.registration.urls'),
     ), 
 ] 
