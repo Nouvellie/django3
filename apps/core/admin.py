@@ -15,6 +15,14 @@ class ColorAdmin(admin.ModelAdmin):
 		'color_id',
 		'color_name',
 	)
+	list_filter = (
+		'color_id',
+		'color_name',
+	)
+	search_fields = (
+		'color_id',
+		'color_name',
+	)
 
 
 admin.site.register(Color, ColorAdmin)

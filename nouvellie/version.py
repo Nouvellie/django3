@@ -14,5 +14,7 @@ Versions
 2: 
 
 - Registration app.
+x Test Case.
+- Admin function.
 
 '''
