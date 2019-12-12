@@ -11,7 +11,9 @@ from .views import (
     ColorDetailView,
     ColorFormView,
     ColorListView,
+    ColorNameDeleteView,
     ColorNameDetailView,
+    ColorNameUpdateView,
     ColorTemplateView,
     ColorUpdateView,
     HomeTemplateView,
@@ -64,9 +66,19 @@ urlpatterns = [
         name = "colorsupdate"
     ),
     path(
+        'colors/detail/<slug:color_name>/update',
+        ColorNameUpdateView.as_view(),
+        name = "colorsnameupdate"
+    ),
+    path(
         'colors/detail/<int:pk>/delete',
         ColorDeleteView.as_view(),
         name = "colorsdelete"
+    ),
+    path(
+        'colors/detail/<slug:color_name>/delete',
+        ColorNameDeleteView.as_view(),
+        name = "colorsnamedelete"
     ),
     path(
         'simpleview',

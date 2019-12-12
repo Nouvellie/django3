@@ -30,9 +30,15 @@
 	</div>
 	<div class="text-center">
 		<br><br><br><br>
-		<a href="{% url 'home' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">HOME</a>
+		<a href="{% url 'home' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">HOME</a><br><br>
 		<a href="{% url 'colorsdetail' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">DETAIL</a>
 		<a href="{% url 'colorsnamedetail' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DETAILNAME</a>
+		<br><br>
+		<a href="{% url 'colorsupdate' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">UPDATE</a>
+		<a href="{% url 'colorsnameupdate' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">UPDATENAME</a>
+		<br><br>
+		<a href="{% url 'colorsdelete' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">DELETE</a>
+		<a href="{% url 'colorsnamedelete' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DELETENAME</a>
 		{% endfor %}
 	</div>
 {% endblock %}

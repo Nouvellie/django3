@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+	COLORSNAMEUPDATE
+{% endblock%}
+
+{% block content %}
+	<form action="" method="POST" class="text-center">
+		{% csrf_token %}
+		{{form}}
+		<br><br>
+		<input type="submit" value="UPDATE" class="btn btn-success">
+	</form>
+	<br><br><br><br>
+	<div class="text-center">
+		<a href="{% url 'home' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">HOME</a>
+	</div>
+{% endblock %}

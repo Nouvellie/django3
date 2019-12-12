@@ -1,4 +1,4 @@
-version = 2.0
+version = 3.0
 
 
 '''
@@ -16,6 +16,10 @@ Versions
 - Registration app.
 x Test Case.
 - Admin function.
-(try 2.2 3.6 video 44)
+
+3:
+
+- Detail, Update and Delete view with Slug.
+- Some functions deleted, and code clean.
 
 '''

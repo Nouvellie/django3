@@ -5,6 +5,7 @@ __created__     =       "12/06/2019 23:27"
 ''' 
 
 
+from nouvellie.version import version
 from .forms import ColorForm
 from .models import Color
 from django.contrib import messages
@@ -49,6 +50,7 @@ class HomeTemplateView(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super(HomeTemplateView, self).get_context_data(**kwargs)
 		context['color'] = Color.objects.first()
+		context['version'] = version
 		return context
 
 
@@ -87,6 +89,7 @@ class ColorNameDetailView(DetailView):
 
 	
 	def get_object(self, *args, **kwargs):
+		print(self.kwargs)
 		color_name = self.kwargs.get('color_name')
 		return get_object_or_404(Color, color_name=color_name) 
 
@@ -124,9 +127,39 @@ class ColorUpdateView(UpdateView):
 		return super().form_valid(form)
 
 
+class ColorNameUpdateView(UpdateView):
+
+	form_class = ColorForm
+	queryset = Color.objects.all()
+	template_name = 'core/colorname_update.html'
+
+
+	def form_valid(self, form):
+		return super().form_valid(form)
+
+	def get_object(self, *args, **kwargs):
+		print(self.kwargs)
+		color_name = self.kwargs.get('color_name')
+		return get_object_or_404(Color, color_name=color_name) 
+
+
 class ColorDeleteView(DeleteView):
 
 	form_class = ColorForm
 	queryset = Color.objects.all()
 	success_url = reverse_lazy('home')
 	template_name = 'core/color_delete.html'
+
+
+class ColorNameDeleteView(DeleteView):
+
+	form_class = ColorForm
+	queryset = Color.objects.all()
+	success_url = reverse_lazy('home')
+	template_name = 'core/colorname_delete.html'
+
+
+	def get_object(self, *args, **kwargs):
+		print(self.kwargs)
+		color_name = self.kwargs.get('color_name')
+		return get_object_or_404(Color, color_name=color_name) 
