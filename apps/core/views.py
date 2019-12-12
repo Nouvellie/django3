@@ -79,6 +79,18 @@ class ColorDetailView(DetailView):
 	template_name = 'core/color_detail.html'
 
 
+class ColorNameDetailView(DetailView):
+
+	context_object_name = 'colors'
+	model = Color
+	template_name = 'core/colorname_detail.html'
+
+	
+	def get_object(self, *args, **kwargs):
+		color_name = self.kwargs.get('color_name')
+		return get_object_or_404(Color, color_name=color_name) 
+
+
 class ColorFormView(FormView):
 
 	form_class = ColorForm

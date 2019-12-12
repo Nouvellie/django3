@@ -11,6 +11,7 @@ from .views import (
     ColorDetailView,
     ColorFormView,
     ColorListView,
+    ColorNameDetailView,
     ColorTemplateView,
     ColorUpdateView,
     HomeTemplateView,
@@ -41,6 +42,11 @@ urlpatterns = [
         'colors/detail/<int:pk>',
         ColorDetailView.as_view(),
         name = "colorsdetail"
+    ),
+    path(
+        'colors/detail/<slug:color_name>',
+        ColorNameDetailView.as_view(),
+        name = "colorsnamedetail"
     ),
     path(
         'colors/form',

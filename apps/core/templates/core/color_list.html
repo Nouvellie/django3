@@ -32,6 +32,7 @@
 		<br><br><br><br>
 		<a href="{% url 'home' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">HOME</a>
 		<a href="{% url 'colorsdetail' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">DETAIL</a>
+		<a href="{% url 'colorsnamedetail' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DETAILNAME</a>
 		{% endfor %}
 	</div>
 {% endblock %}

@@ -36,6 +36,3 @@ class Color(models.Model):
 
 	def __str__(self):
 		return self.color_name
-
-	def get_absolute_url(self):
-		return reverse("colorsdetail", kwargs = {"pk": self.color_id})
