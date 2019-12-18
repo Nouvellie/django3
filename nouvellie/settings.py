@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     # Main:
     'apps.core',
 
+    # Apps.
+    'apps.testmodels',
+
     # Accounts.
     'apps.registration',
 ]

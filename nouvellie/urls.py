@@ -23,6 +23,12 @@ urlpatterns = [
         include('apps.core.urls'),
     ), 
 
+    # Apps. 
+    path(
+        '',
+        include('apps.testmodels.urls'),
+    ), 
+
     # Accounts.
     path(
         '',

@@ -1,4 +1,4 @@
-version = 3.0
+version = 4.0
 
 
 '''
@@ -21,5 +21,10 @@ x Test Case.
 
 - Detail, Update and Delete view with Slug.
 - Some functions deleted, and code clean.
+- Reverse lazy fixed.
+
+4:
+
+- Test Model app.
 
 '''
