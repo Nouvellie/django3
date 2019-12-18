@@ -110,6 +110,7 @@ class ColorCreateView(CreateView):
 
 	form_class = ColorForm
 	queryset = Color.objects.all()
+	success_url = reverse_lazy('home')
 	template_name = 'core/color_create.html'
 
 	def form_valid(self, form):
@@ -120,6 +121,7 @@ class ColorUpdateView(UpdateView):
 
 	form_class = ColorForm
 	queryset = Color.objects.all()
+	success_url = reverse_lazy('home')
 	template_name = 'core/color_update.html'
 
 
@@ -131,6 +133,7 @@ class ColorNameUpdateView(UpdateView):
 
 	form_class = ColorForm
 	queryset = Color.objects.all()
+	success_url = reverse_lazy('home')
 	template_name = 'core/colorname_update.html'
 
 

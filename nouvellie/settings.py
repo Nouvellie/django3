@@ -68,16 +68,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nouvellie.wsgi.application'
 
-DATABASES = { 
-    'default': { 
-        'ENGINE':       'django.db.backends.mysql', 
-        'NAME':         'nouvellie', 
-        'PORT':         '3306', 
-        'USER':         'nouvellie', 
-        'PASSWORD':     'testing3341', 
-        'HOST':         '127.0.0.1', 
-    }, 
-} 
+# DATABASES = { 
+#     'default': { 
+#         'ENGINE':       'django.db.backends.mysql', 
+#         'NAME':         'nouvellie', 
+#         'PORT':         '3306', 
+#         'USER':         'nouvellie', 
+#         'PASSWORD':     'testing3341', 
+#         'HOST':         '127.0.0.1', 
+#     }, 
+# } 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 ''' 
 MYSQL USER CREATION (LOCALHOST):
