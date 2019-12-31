@@ -9,6 +9,7 @@ from nouvellie.version import version
 from .forms import ColorForm
 from .models import Color
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.http import (
 	Http404,
 	HttpResponse,
@@ -18,6 +19,7 @@ from django.shortcuts import (
 	render,
 )
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.generic import (
 	CreateView,
@@ -94,6 +96,7 @@ class ColorNameDetailView(DetailView):
 		return get_object_or_404(Color, color_name=color_name) 
 
 
+@method_decorator(login_required, name = 'dispatch')
 class ColorFormView(FormView):
 
 	form_class = ColorForm
@@ -106,6 +109,7 @@ class ColorFormView(FormView):
 		return super(ColorFormView, self).form_valid(form)
 
 
+@method_decorator(login_required, name = 'dispatch')
 class ColorCreateView(CreateView):
 
 	form_class = ColorForm
@@ -117,6 +121,7 @@ class ColorCreateView(CreateView):
 		return super().form_valid(form)
 
 
+@method_decorator(login_required, name = 'dispatch')
 class ColorUpdateView(UpdateView):
 
 	form_class = ColorForm
@@ -129,6 +134,7 @@ class ColorUpdateView(UpdateView):
 		return super().form_valid(form)
 
 
+@method_decorator(login_required, name = 'dispatch')
 class ColorNameUpdateView(UpdateView):
 
 	form_class = ColorForm
@@ -146,6 +152,7 @@ class ColorNameUpdateView(UpdateView):
 		return get_object_or_404(Color, color_name=color_name) 
 
 
+@method_decorator(login_required, name = 'dispatch')
 class ColorDeleteView(DeleteView):
 
 	form_class = ColorForm
@@ -154,6 +161,7 @@ class ColorDeleteView(DeleteView):
 	template_name = 'core/color_delete.html'
 
 
+@method_decorator(login_required, name = 'dispatch')
 class ColorNameDeleteView(DeleteView):
 
 	form_class = ColorForm

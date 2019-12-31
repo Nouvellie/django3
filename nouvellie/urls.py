@@ -6,6 +6,7 @@ __created__     =       "12/06/2019 23:27"
 
 
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.urls import include, path
 
 
@@ -31,7 +32,12 @@ urlpatterns = [
 
     # Accounts.
     path(
-        '',
-        include('apps.registration.urls'),
-    ), 
+        'accounts/',
+        include('django.contrib.auth.urls'),
+    ),
+    path(
+        'accounts/login',
+        auth_views.LoginView.as_view(),
+        name = 'login',
+    ),
 ] 

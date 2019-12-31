@@ -23,9 +23,9 @@ class Item(models.Model):
 		db_column = 'ITEM_NAME',
 		verbose_name = 'NAME',
 	)
-	item_image = ImageField(
+	# item_image = ImageField(
 		
-	)
+	# )
 
 	class Meta:
 

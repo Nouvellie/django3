@@ -25,6 +25,12 @@ x Test Case.
 
 4:
 
-- Test Model app.
+x Test Model app.
 
+5:
+
+- Sign in.
+- Sign out.
+- Login required.
+- User connected.
 '''
