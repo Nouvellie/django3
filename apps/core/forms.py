@@ -9,16 +9,13 @@ from .models import Color
 from django import forms
 
 
-import datetime
-
-
 class ColorForm(forms.ModelForm):
 
 
 	color_name = forms.CharField(
 		required = False,
 		label = 'Color name',
-		widget=forms.TextInput(
+		widget = forms.TextInput(
 			attrs = {'class': 'form-control mb-2', 'placeholder': 'COLOR NAME'}
 		)
 	)
