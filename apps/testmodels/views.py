@@ -6,15 +6,29 @@ __created__     =       "12/18/2019 08:50"
 
 
 from .forms import ItemForm
+from .models import Item
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import FormView
+from django.views.generic import (
+	FormView,
+	TemplateView,
+)
+
+
+class ItemView(TemplateView):
+
+	template_name = 'testmodels/item.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(ItemView, self).get_context_data(**kwargs)
+		context['item']	= Item.objects.last()
+		return context
 
 
 class ItemFormView(FormView):
 	
 	form_class = ItemForm
-	template_name = 'testmodels/item.html'
+	template_name = 'testmodels/itemform.html'
 	
 	# Here we can change the context.
 	def get_context_data(self, *args, **kwargs):

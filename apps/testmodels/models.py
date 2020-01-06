@@ -21,6 +21,9 @@ choices = (
 )
 
 
+import uuid
+
+
 class Item(models.Model):
 
 	item_id = models.AutoField(
@@ -134,6 +137,9 @@ class Item(models.Model):
 	item_uuid = models.UUIDField(
 		blank = True,
 		null = True,
+		unique = True,
+		default = uuid.uuid4,
+		editable = False,
 		db_column = 'ITEM_UUID',
 		verbose_name = 'UUID',
 	)

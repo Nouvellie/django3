@@ -67,6 +67,34 @@ class ItemForm(forms.ModelForm):
 			attrs = {'class': 'form-control mb-2', 'placeholder': 'FILE',}
 		)
 	)
+	item_integer = forms.IntegerField(
+		required = False,
+		label = 'Integer',
+		widget = forms.TextInput(
+			attrs = {'class': 'form-control mb-2', 'placeholder': 'INTEGER',}
+		)	
+	)
+	item_slug = forms.SlugField(
+		required = False,
+		label = 'Slug',
+		widget = forms.TextInput(
+			attrs = {'class': 'form-control mb-2', 'placeholder': 'SLUG',}
+		)	
+	)
+	item_url = forms.URLField(
+		required = False,
+		label = 'URL',
+		widget = forms.URLInput(
+			attrs = {'class': 'form-control mb-2', 'placeholder': 'URL',}
+		)	
+	)
+	# item_uuid = forms.UUIDField(
+	# 	required = False,
+	# 	label = 'UUID',
+	# 	widget = forms.TextInput(
+	# 		attrs = {'class': 'form-control mb-2', 'placeholder': 'UUID',}
+	# 	)	
+	# )
 
 	class Meta:
 		model = Item
@@ -79,14 +107,10 @@ class ItemForm(forms.ModelForm):
 			'item_decimal',
 			'item_email',
 			'item_file',
+			'item_integer',
+			'item_slug',
+			'item_url',
+			# 'item_uuid',
 		)
-	
-# item_integer
-	
-# item_slug
-	
-# item_name
-	
-# item_url
-	
-# item_uuid
+
+# UUID is create by default. If you want to create it manually, mute the default in models and demote uuid in forms.

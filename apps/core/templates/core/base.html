@@ -15,9 +15,9 @@
 <body>
 	<h2 class="text-right">
 		{% if user.is_authenticated %}
-			{{user}} &nbsp;&nbsp; <a href="{% url 'logout' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">SIGN OUT</a>&nbsp;
+			{{user}} &nbsp;&nbsp; <a href="{% url 'logout' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">SIGN OUT</a>&nbsp;
 		{% else %}
-			<a href="{% url 'login' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">SIGN IN</a>&nbsp;
+			<a href="{% url 'login' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px; ">SIGN IN</a>&nbsp;
 		{% endif %}
 	</h2>
 	<h1 class="text-center">DJANGO</h1>

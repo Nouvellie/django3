@@ -39,4 +39,5 @@ x Test Model app.
 - Forms updated.
 - Admin created for Items.
 - Models updated.
+- Sign In/Out button fixed.
 '''
