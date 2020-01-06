@@ -53,16 +53,28 @@ class Item(models.Model):
 	item_date = models.DateField(
 		blank = True,
 		null = True,
-		auto_now_add = True, # Date of creation.
 		db_column = 'ITEM_DATE',
 		verbose_name = 'DATE',
+	)
+	item_date_auto = models.DateField(
+		blank = True,
+		null = True,
+		auto_now_add = True, # Date of creation.
+		db_column = 'ITEM_DATE_AUTO',
+		verbose_name = 'DATE_AUTO',
 	)
 	item_update_date = models.DateTimeField(
 		blank = True,
 		null = True,
-		auto_now = True, # Updates the data at every change.
 		db_column = 'ITEM_UPDATE_DATE',
 		verbose_name = 'UPDATE_DATE',
+	)
+	item_update_date_auto = models.DateTimeField(
+		blank = True,
+		null = True,
+		auto_now = True, # Updates the data at every change.
+		db_column = 'ITEM_UPDATE_DATE_AUTO',
+		verbose_name = 'UPDATE_DATE_AUTO',
 	)
 	item_decimal = models.DecimalField(
 		blank = True,

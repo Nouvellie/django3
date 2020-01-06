@@ -5,9 +5,14 @@ __created__     =       "12/18/2019 08:50"
 ''' 
 
 
+from .views import ItemFormView
 from django.urls import path
  
  
 urlpatterns = [ 
-
+	path(
+        'item',
+        ItemFormView.as_view(),
+        name = "home",
+    ), 
 ] 

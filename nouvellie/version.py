@@ -1,4 +1,4 @@
-version = 4.0
+version = 6.0
 
 
 '''
@@ -33,4 +33,10 @@ x Test Model app.
 - Sign out.
 - Login required.
 - User connected.
+
+6:
+
+- Forms updated.
+- Admin created for Items.
+- Models updated.
 '''
