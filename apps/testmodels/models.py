@@ -5,20 +5,12 @@ __created__     =       "12/18/2019 08:50"
 ''' 
 
 
+from .choice import choices_random
 from django.core.validators import (
 	MinValueValidator,
 	MaxValueValidator,
 )
 from django.db import models
-
-choices = (
-	(1, 'House'),
-	(2, 'Car'),
-	(3, 'Light'),
-	(4, 'Buzz'),
-	(5, 'Year'),
-	(10, 'Star Patrick'),
-)
 
 
 import uuid
@@ -142,6 +134,14 @@ class Item(models.Model):
 		editable = False,
 		db_column = 'ITEM_UUID',
 		verbose_name = 'UUID',
+	)
+	item_choices = models.IntegerField(
+		blank = True,
+		null = True,
+		default = 1,
+		db_column = 'ITEM_CHOICES',
+		verbose_name = 'CHOICES',
+		choices = choices_random,
 	)
 
 	class Meta:

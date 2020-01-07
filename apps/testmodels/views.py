@@ -5,6 +5,7 @@ __created__     =       "12/18/2019 08:50"
 ''' 
 
 
+from .choice import choices_random
 from .forms import ItemForm
 from .models import Item
 from django.contrib.auth.decorators import login_required
@@ -17,6 +18,9 @@ from django.views.generic import (
 )
 
 
+import pandas as pd
+
+
 class ItemView(TemplateView):
 
 	template_name = 'testmodels/item.html'
@@ -24,6 +28,12 @@ class ItemView(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super(ItemView, self).get_context_data(**kwargs)
 		context['item']	= Item.objects.last()
+		df = pd.DataFrame(choices_random)
+		df.columns = ['ID', 'CHCS']
+		try:
+			context['choice'] = df[df['ID'] == context['item'].item_choices]['CHCS'].iloc[0]
+		except:
+			context['choice'] = 'Nothing'
 		return context
 
 
