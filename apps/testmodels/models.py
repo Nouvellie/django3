@@ -32,7 +32,7 @@ class Item(models.Model):
 		verbose_name = 'ID',
 	)
 	item_name = models.CharField(
-		max_length = 20,
+		max_length = 50,
 		blank = True, 
 		null = True,
 		unique = True,
@@ -121,7 +121,7 @@ class Item(models.Model):
 		db_column = 'ITEM_SLUG',
 		verbose_name = 'SLUG',
 	)
-	item_name = models.TextField(
+	item_text = models.TextField(
 		blank = True, 
 		null = True,
 		db_column = 'ITEM_TEXT',

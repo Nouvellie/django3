@@ -88,6 +88,13 @@ class ItemForm(forms.ModelForm):
 			attrs = {'class': 'form-control mb-2', 'placeholder': 'URL',}
 		)	
 	)
+	item_text = forms.CharField(
+		required = False,
+		label = 'Text',
+		widget = forms.Textarea(
+			attrs = {'class': 'form-control mb-2', 'placeholder': 'TEXT',}
+		)
+	)
 	# item_uuid = forms.UUIDField(
 	# 	required = False,
 	# 	label = 'UUID',
@@ -111,6 +118,7 @@ class ItemForm(forms.ModelForm):
 			'item_slug',
 			'item_url',
 			# 'item_uuid',
+			'item_text',
 		)
 
 # UUID is create by default. If you want to create it manually, mute the default in models and demote uuid in forms.

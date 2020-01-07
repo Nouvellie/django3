@@ -17,18 +17,23 @@
 			<br><br>
 			<a href="{% url 'colorslist' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">LIST</a>
 			<br><br>		
-			<a href="{% url 'colorsdetail' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DETAIL</a>
-			<a href="{% url 'colorsnamedetail' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DETAILNAME</a>
+			{% if color %}
+				<a href="{% url 'colorsdetail' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DETAIL</a>
+				<a href="{% url 'colorsnamedetail' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DETAILNAME</a>
+			{% endif %}
 			<br><br>		
 			<a href="{% url 'colorsform' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">FORM</a>
 			<br><br>		
 			<a href="{% url 'colorscreate' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">CREATE</a>
 			<br><br>
-			<a href="{% url 'colorsupdate' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">UPDATE</a>
-			<a href="{% url 'colorsnameupdate' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">UPDATENAME</a>
-			<br><br>
-			<a href="{% url 'colorsdelete' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DELETE</a>
-			<a href="{% url 'colorsnamedelete' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DELETENAME</a>
+			{% if color %}
+				<a href="{% url 'colorsupdate' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">UPDATE</a>
+				<a href="{% url 'colorsnameupdate' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">UPDATENAME</a>
+			
+				<br><br>
+				<a href="{% url 'colorsdelete' color.color_id %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DELETE</a>
+				<a href="{% url 'colorsnamedelete' color.color_name %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">DELETENAME</a>
+			{% endif %}
 		</div>
 		<div class="column col-xs-12 col-sm-12 col-md-6 col-lg-6">
 			<a href="{% url 'item' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">ITEMS</a>

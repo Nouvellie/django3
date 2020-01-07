@@ -26,6 +26,7 @@ class ItemAdmin(admin.ModelAdmin):
 		'item_slug',
 		'item_url',
 		'item_uuid',
+		'item_text',
 	)
 	list_editable = (
 		'item_name',
@@ -39,6 +40,7 @@ class ItemAdmin(admin.ModelAdmin):
 		'item_integer',
 		'item_slug',
 		'item_url',
+		'item_text',
 	)
 	list_filter = (
 		'item_id',
@@ -56,6 +58,7 @@ class ItemAdmin(admin.ModelAdmin):
 		'item_slug',
 		'item_url',
 		'item_uuid',
+		'item_text',
 	)
 	search_fields = (
 		'item_id',
@@ -73,6 +76,7 @@ class ItemAdmin(admin.ModelAdmin):
 		'item_slug',
 		'item_url',
 		'item_uuid',
+		'item_text',
 	)
 
 

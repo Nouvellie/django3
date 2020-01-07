@@ -13,7 +13,19 @@
 			<a href="{% url 'itemform' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">CREATE ITEM</a>
 			<br><br>
 		{% else %}
-			{{item}}
+			<h3>Item n° {{item.item_id}}</h3><br>
+			<h3>Name: {{item.item_name}}</h3><br>
+			<img src="{{item.item_image.url}}" alt="{{item.item_name}}"><br>
+			<h3>BOOL: {{item.item_bool}}</h3><br>
+			<h3>Date: {{item.item_date}}</h3><br>
+			<h3>Update: {{item.item_update_date}}</h3><br>
+			<h3>Decimal: {{item.item_decimal}}</h3><br>
+			<h3>Email: {{item.item_email}}</h3><br>
+			<h3>Integer: {{item.item_integer}}</h3><br>
+			<h3>Slug: {{item.item_slug}}</h3><br>
+			<h3>URL: {{item.item_url}}</h3><br>
+			<h3>UUID: {{item.item_uuid}}</h3><br>
+			<h3>Text: {{item.item_text}}</h3><br>
 		{% endif %}
 	</div>
 	<br>

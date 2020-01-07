@@ -43,4 +43,12 @@ x Test Model app.
 - Home view updated.
 - Item create view with login.
 - Item view "if not".
+
+7: 
+
+- Database flush.
+- Home view fix with no color.
+- TextField fixed. (name and text)
+- Admin/forms/models fixed.
+- Render item on page. (only last)
 '''
