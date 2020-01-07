@@ -92,6 +92,13 @@ MYSQL USER CREATION (LOCALHOST):
 CREATE USER 'nouvellie'@'%' identified by 'testing3341';
 ALTER USER 'nouvellie'@'%' identified WITH mysql_native_password by 'testing3341';
 GRANT ALL PRIVILEGES ON *.* to 'nouvellie'@'%';
+
+Fix migration errors.
+python3 manage.py makemigrations
+python3 manage.py makemigrations *
+python3 manage.py migrate --fake core zero
+python3 manage.py makemigrations *
+python3 manage.py migrate --fake-initial
 '''
  
 AUTH_PASSWORD_VALIDATORS = [
