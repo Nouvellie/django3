@@ -7,8 +7,10 @@ __created__     =       "12/18/2019 08:50"
 
 from .forms import ItemForm
 from .models import Item
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import (
 	FormView,
 	TemplateView,
@@ -25,6 +27,7 @@ class ItemView(TemplateView):
 		return context
 
 
+@method_decorator(login_required, name = 'dispatch')
 class ItemFormView(FormView):
 	
 	form_class = ItemForm

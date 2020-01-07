@@ -40,4 +40,7 @@ x Test Model app.
 - Admin created for Items.
 - Models updated.
 - Sign In/Out button fixed.
+- Home view updated.
+- Item create view with login.
+- Item view "if not".
 '''

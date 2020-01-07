@@ -6,5 +6,15 @@
 {% endblock %}
 
 {% block content %}
-	{{item}}
+	<div class="text-center">
+		{% if not item %}
+			<h3>There is no item.</h3><br>
+			<h4>Create an item before.</h4><br>
+			<a href="{% url 'itemform' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">CREATE ITEM</a>
+			<br><br>
+		{% else %}
+			{{item}}
+		{% endif %}
+	</div>
+		
 {% endblock %}
