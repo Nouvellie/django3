@@ -51,4 +51,8 @@ x Test Model app.
 - TextField fixed. (name and text)
 - Admin/forms/models fixed.
 - Render item on page. (only last)
+
+8:
+
+- Registration app created, but templates on general root folder.
 '''

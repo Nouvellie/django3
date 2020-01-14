@@ -50,7 +50,7 @@ class ItemFormView(FormView):
 	
 	# This def validate all the fields of the form.
 	def form_valid(self, form):
-		form.save(commit=True)
+		form.save(commit = True)
 		return super(ItemFormView, self).form_valid(form)
 	
 	# Here is redirected if the form is completed with valid data.
