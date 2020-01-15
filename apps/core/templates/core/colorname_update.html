@@ -3,14 +3,14 @@
 
 {% block title %}
 	COLORSNAMEUPDATE
-{% endblock%}
+{% endblock %}
 
 {% block content %}
 	<form action="" method="POST" class="text-center">
 		{% csrf_token %}
-		{{form}}
+			{{form}}
 		<br><br>
-		<input type="submit" value="UPDATE" class="btn btn-success">
+		<input class="btn btn-success" type="submit" value="UPDATE" style="border-color: rgba(77, 176, 193, 1); width: 100px;">
 	</form>
 	<br><br><br><br>
 	<div class="text-center">

@@ -9,7 +9,7 @@
 	<form action="" method="POST" class="text-center" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{form.as_p}}
-		<input type="submit" value="CREATE ITEM">
+		<input class="btn btn-success" type="submit" value="CREATE ITEM" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">
 	</form>
 	<br>
 	<div class="text-center">

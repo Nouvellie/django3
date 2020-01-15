@@ -35,8 +35,9 @@ INSTALLED_APPS = [
     'apps.core',
 
     # Apps.
-    'apps.testmodels',
+    'apps.angular',
     'apps.registration',
+    'apps.testmodels',
 ]
 
 MIDDLEWARE = [

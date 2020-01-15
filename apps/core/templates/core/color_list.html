@@ -3,7 +3,7 @@
 
 {% block title %}
 	COLORSLIST
-{% endblock%}
+{% endblock %}
 
 {% block content %}
 	<div class="text-center">
@@ -20,7 +20,7 @@
 	            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">previous</a>
 	        {% endif %}
 	        <span class="current">
-	            <button class="btn btn-success">{{page_obj.number}}/{{page_obj.paginator.num_pages}}</button>
+	            <button class="btn btn-success" style="border-color: rgba(77, 176, 193, 1); width: 100px;">{{page_obj.number}}/{{page_obj.paginator.num_pages}}</button>	       
 	        </span>
 	        {% if page_obj.has_next %}
 	            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">next</a>

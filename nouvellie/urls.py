@@ -36,6 +36,10 @@ urlpatterns = [
         '',
         include('apps.registration.urls'),
     ), 
+    path(
+        '',
+        include('apps.angular.urls'),
+    ), 
 
     # Accounts.
     path(

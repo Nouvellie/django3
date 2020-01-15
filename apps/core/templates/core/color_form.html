@@ -3,14 +3,14 @@
 
 {% block title %}
 	COLORSFORM
-{% endblock%}
+{% endblock %}
 
 {% block content %}
 	<form action="" method="POST" class="text-center">
 		{% csrf_token %}
 		<input type="text" name="color_name">
 		<br><br>
-		<input type="submit" value="ADD COLOR" class="btn btn-success">
+		<input class="btn btn-success" type="submit" value="ADD COLOR" style="border-color: rgba(77, 176, 193, 1); width: 150px;">
 		{% if form.errors %}
 		    {% for field in form %}
 		        {% for error in field.errors %}

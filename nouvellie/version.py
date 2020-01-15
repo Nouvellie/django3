@@ -56,4 +56,8 @@ x Test Model app.
 
 - Registration app created, but templates on general root folder.
 x SignUp form and view ready, but does not work.
+- Buttons fixed.
+- Width adapted.
+- Submits changed.
+- Angular added. (js, script, etc.)
 '''

@@ -3,7 +3,7 @@
 
 {% block title %}
 	COLORSNAMEDELETE
-{% endblock%}
+{% endblock %}
 
 {% block content %}
 	<div class="text-center">
@@ -12,9 +12,9 @@
 	</div>
 	<form action="" method="POST" class="text-center">
 		{% csrf_token %}
-		{{form}}
+			{{form}}
 		<br><br>
-		<input type="submit" value="DELETE" class="btn btn-success">
+		<input class="btn btn-success" type="submit" value="DELETE" style="border-color: rgba(77, 176, 193, 1); width: 100px;">
 	</form>
 	<div class="text-center">
 		<br><br><br><br>

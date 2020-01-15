@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+    ANGULAR
+{% endblock %}
+
+{% block content %}
+	<form>
+		<input type="text" name="">
+		<input type="submit" name="Submit" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">
+	</form>
+{% endblock %}
+
+{% block script %}
+	<script src="{% static 'angular/js/angular.min.js' %}" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="{% static 'angular/js/custom.js' %}" type="text/javascript" charset="utf-8" async defer></script>
+{% endblock %}
