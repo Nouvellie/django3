@@ -55,4 +55,5 @@ x Test Model app.
 8:
 
 - Registration app created, but templates on general root folder.
+x SignUp form and view ready, but does not work.
 '''

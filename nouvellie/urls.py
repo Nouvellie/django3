@@ -32,6 +32,10 @@ urlpatterns = [
         '',
         include('apps.testmodels.urls'),
     ), 
+    path(
+        '',
+        include('apps.registration.urls'),
+    ), 
 
     # Accounts.
     path(
