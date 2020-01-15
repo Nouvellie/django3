@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+    ANGULAR
+{% endblock %}
+
+{% block content %}
+	<center>
+		<form ng-submit="testAngularAdd()">	
+			<input type="text" name="" ng-model="testAngularInput" placeholder="Add a new item."><br><br>
+			<button ng-click="saveData()" type="submit" class="btn btn-success" style="background: rgba(40, 167, 69, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">ADD</button>
+		</form>
+		<br><br>
+		<div ng-repeat="tests in testAngularList">
+			<input type="checkbox" name="" ng-model="tests.done">
+			<span ng-bind="tests.testAngularText"></span>
+		</div>
+		<br><br><br>
+		<p>
+			<button ng-click="remove()" type="" class="btn btn-success" style="background: rgba(212, 63, 58, 1); border-color: rgba(77, 176, 193, 1); width: 100px";>DELETE</button>
+		</p>
+	</center>
+	<br><br>
+	<div class="text-center">
+		<br><br><br><br>
+		<a href="{% url 'home' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">HOME</a>
+	</div>
+{% endblock %}

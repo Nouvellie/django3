@@ -12,7 +12,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import include, path
 
 
-
+# Every URL must end with slash.
 urlpatterns = [ 
  
     # Admin app. 
@@ -37,8 +37,8 @@ urlpatterns = [
         include('apps.registration.urls'),
     ), 
     path(
-        '',
-        include('apps.angular.urls'),
+        'api/',
+        include('apps.angular_1.urls'),
     ), 
 
     # Accounts.
@@ -47,7 +47,7 @@ urlpatterns = [
         include('django.contrib.auth.urls'),
     ),
     path(
-        'accounts/login',
+        'accounts/login/',
         auth_views.LoginView.as_view(),
         name = 'login',
     ),

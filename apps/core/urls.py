@@ -31,62 +31,62 @@ urlpatterns = [
         name = "home",
     ), 
     path(
-        'colors',
+        'colors/',
         ColorTemplateView.as_view(),
         name = "colors",
     ), 
     path(
-        'colors/list',
+        'colors/list/',
         ColorListView.as_view(),
         name = "colorslist"
     ),
     path(
-        'colors/detail/<int:pk>',
+        'colors/detail/<int:pk>/',
         ColorDetailView.as_view(),
         name = "colorsdetail"
     ),
     path(
-        'colors/detail/<slug:color_name>',
+        'colors/detail/<slug:color_name>/',
         ColorNameDetailView.as_view(),
         name = "colorsnamedetail"
     ),
     path(
-        'colors/form',
+        'colors/form/',
         ColorFormView.as_view(),
         name = "colorsform"
     ),
     path(
-        'colors/create',
+        'colors/create/',
         ColorCreateView.as_view(),
         name = "colorscreate"
     ),
     path(
-        'colors/detail/<int:pk>/update',
+        'colors/detail/<int:pk>/update/',
         ColorUpdateView.as_view(),
         name = "colorsupdate"
     ),
     path(
-        'colors/detail/<slug:color_name>/update',
+        'colors/detail/<slug:color_name>/update/',
         ColorNameUpdateView.as_view(),
         name = "colorsnameupdate"
     ),
     path(
-        'colors/detail/<int:pk>/delete',
+        'colors/detail/<int:pk>/delete/',
         ColorDeleteView.as_view(),
         name = "colorsdelete"
     ),
     path(
-        'colors/detail/<slug:color_name>/delete',
+        'colors/detail/<slug:color_name>/delete/',
         ColorNameDeleteView.as_view(),
         name = "colorsnamedelete"
     ),
     path(
-        'simpleview',
+        'simpleview/',
         SimpleView.as_view(),
         name = "simpleview"
     ),
     path(
-        'simpleredirectview',
+        'simpleredirectview/',
         SimpleRedirectView.as_view(),
         name = "simpleredirectview"
     ),

@@ -11,7 +11,7 @@ from django.urls import path
  
 urlpatterns = [ 
 	path(
-        'accounts/signup',
+        'accounts/signup/',
 		SignUpView.as_view(),        
         name = "signup",
     ), 

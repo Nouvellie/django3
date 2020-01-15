@@ -61,4 +61,8 @@ x SignUp form and view ready, but does not work.
 - Submits changed.
 - Angular added. (js, script, etc.)
 - Serializers method for models.
+- URL's slash fixed.
+- PUT, DETAIL, DELETE API VIEW ready.
+- JQuery must be imported before bootstrap on base.html.
+
 '''
