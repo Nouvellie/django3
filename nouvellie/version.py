@@ -1,4 +1,4 @@
-version = 7.0
+version = 8.0
 
 
 '''
@@ -60,4 +60,5 @@ x SignUp form and view ready, but does not work.
 - Width adapted.
 - Submits changed.
 - Angular added. (js, script, etc.)
+- Serializers method for models.
 '''

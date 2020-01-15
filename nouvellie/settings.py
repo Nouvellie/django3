@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'apps.angular',
     'apps.registration',
     'apps.testmodels',
+
+    # DRF.
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

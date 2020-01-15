@@ -43,7 +43,6 @@ class Item(models.Model):
 		null = True,
 		db_column = 'ITEM_BOOL',
 		verbose_name = 'BOOL',
-
 	)
 	item_date = models.DateField(
 		blank = True,
