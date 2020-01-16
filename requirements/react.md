@@ -24,3 +24,10 @@ $ create-react-app django-react-test1
 $ sudo rm -rf django-react-test1/src
 $ touch django-react-test1/src/index.js
 ```
+
+## Install bootstraps
+
+```sh
+$ npm install bootstrap@4.4.1
+$ npm install reactstratp@8.3.2
+```

@@ -1,7 +1,10 @@
-version = 8.0
+version = 9.0
 angularjs = 1.7
 reactjs = 13.6
 django = 3.0
+bootstrap = 4.4.1
+reactstrap = 8.3.2
+
 
 '''
 Versions
@@ -73,5 +76,5 @@ x SignUp form and view ready, but does not work.
 - React installed.
 - Index js for React.
 - Cors origin whitelist added.
-
+- React render title, description.
 '''
