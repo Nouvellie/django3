@@ -1,5 +1,7 @@
 version = 8.0
-
+angularjs = 1.7
+reactjs = 13.6
+django = 3.0
 
 '''
 Versions
@@ -64,5 +66,12 @@ x SignUp form and view ready, but does not work.
 - URL's slash fixed.
 - PUT, DETAIL, DELETE API VIEW ready.
 - JQuery must be imported before bootstrap on base.html.
+
+9:
+
+- Corsheaders.
+- React installed.
+- Index js for React.
+- Cors origin whitelist added.
 
 '''

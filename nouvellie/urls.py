@@ -5,11 +5,20 @@ __created__     =       "12/06/2019 23:27"
 ''' 
 
 
+from apps.react_1.views import (
+    ItemViewSet,
+    TestViewSet,
+)
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'api/react_1/test', TestViewSet, 'react1_test')
+router.register(r'api/react_1/model', ItemViewSet, 'react1_model')
 
 
 # Every URL must end with slash.
@@ -40,6 +49,13 @@ urlpatterns = [
         'api/',
         include('apps.angular_1.urls'),
     ), 
+
+
+    # Router:
+    path(
+        '',
+        include(router.urls),
+    ),
 
     # Accounts.
     path(
