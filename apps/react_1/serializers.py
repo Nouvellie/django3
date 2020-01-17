@@ -19,4 +19,5 @@ class TestReactSerializer(serializers.ModelSerializer):
 			'test_react_id',
 			'test_react_title',
 			'test_react_description',
+			'test_react_image',
 		)

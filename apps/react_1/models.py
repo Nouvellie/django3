@@ -32,3 +32,10 @@ class TestReact(models.Model):
 		db_column = 'TEST_REACT_DESCRIPTION',
 		verbose_name = 'DESCRIPTION',
 	)
+	test_react_image = models.ImageField(
+		blank = True,
+		null = True,
+		upload_to = 'react_1/image/',
+		db_column = 'TEST_REACT_IMAGE',
+		verbose_name = 'IMAGE',
+	)

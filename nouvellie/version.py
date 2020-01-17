@@ -2,8 +2,15 @@ version = 9.0
 angularjs = 1.7
 reactjs = 13.6
 django = 3.0
-bootstrap = 4.4.1
-reactstrap = 8.3.2
+bootstrap = 4.4 # 4.4.1
+reactstrap = 8.3 #8.3.2
+'''
+ReactStrap need: 
+
+- Jquery 1.9.1
+- TypeScript 2.8.0
+- TsUtils 3.17.1
+'''
 
 
 '''
@@ -77,4 +84,6 @@ x SignUp form and view ready, but does not work.
 - Index js for React.
 - Cors origin whitelist added.
 - React render title, description.
+- Bootstrap and reactstrap installed.
+- Bootstrap imported on index.js.
 '''

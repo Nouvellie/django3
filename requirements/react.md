@@ -31,3 +31,17 @@ $ touch django-react-test1/src/index.js
 $ npm install bootstrap@4.4.1
 $ npm install reactstratp@8.3.2
 ```
+
+#### If reactstrap get errors:
+
+```sh
+$ npm install jquery@1.9.1
+$ npm install typescript@2.8.0
+$ npm install tsutils@3.17.1
+```
+
+#### Fix vulnerabilities:
+
+```sh
+$ npm audit fix -f
+```
