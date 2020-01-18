@@ -9,6 +9,10 @@ from apps.react_1.views import (
     ItemViewSet,
     TestViewSet,
 )
+from apps.angular_2.views import (
+    ImagesModelViewSet,
+    TestingModelViewSet,
+)
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -19,6 +23,9 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register(r'api/react_1/test', TestViewSet, 'react1_test')
 router.register(r'api/react_1/model', ItemViewSet, 'react1_model')
+router.register(r'api/angular_2/images', ImagesModelViewSet, 'angular2_images')
+router.register(r'api/angular_2/testing', TestingModelViewSet, 'angular2_testing')
+
 
 
 # Every URL must end with slash.
@@ -48,7 +55,11 @@ urlpatterns = [
     path(
         'api/',
         include('apps.angular_1.urls'),
-    ), 
+    ),
+    path(
+        'api/',
+        include('apps.angular_2.urls'),
+    ),  
 
 
     # Router:

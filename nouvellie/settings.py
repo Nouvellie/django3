@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 
     # Apps.
     'apps.angular_1',
+    'apps.angular_2',
     'apps.react_1',
     'apps.registration',
     'apps.testmodels',

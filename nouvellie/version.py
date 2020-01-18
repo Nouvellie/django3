@@ -86,4 +86,9 @@ x SignUp form and view ready, but does not work.
 - React render title, description.
 - Bootstrap and reactstrap installed.
 - Bootstrap imported on index.js.
+
+10:
+
+- Testing post method with angular.
+- Angular_2 app for testing.
 '''

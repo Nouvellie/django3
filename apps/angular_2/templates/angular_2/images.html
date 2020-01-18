@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+
+ANGULAR-IMAGES
+
+{% endblock %}
+
+{% block content %}
+<center>
+    {% for ima in images %}
+        <img src="{{ima.images_url}}" alt="" style="width: 600px; height: 400px;">
+    {% endfor %}
+</center>   
+<br><br><br>
+
+ <!-- Paginator -->
+        <div class="text-center">  
+
+            {% if page_obj.has_previous %} <!-- If there's a previous page. -->  
+                <a href="?page=1">
+                    <div class="btn btn-warning" style="color: white; background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">
+                        FIRST
+                    </div>
+                </a>  
+            {% endif %} 
+            &nbsp; 
+            {% for num in page_obj.paginator.page_range %}  
+                {% if page_obj.number == num %}  
+                    
+                    <div class="btn btn-warning" style="color: white; background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">
+                        {{ num }}
+                    </div>            
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}  
+                    <a href="?page={{ num }}">
+                        <div class="btn btn-warning" style="color: white; background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">
+                            {{ num }}
+                        </div>
+                    </a>  
+                {% endif %}  
+            {% endfor %}  
+            &nbsp;
+            {% if page_obj.has_next %}  
+                <a href="?page={{ page_obj.paginator.num_pages }}">
+                    <div class="btn btn-warning" style="color: white; background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">
+                        LAST
+                    </div>
+                </a>  
+                <div class="btn btn-warning" style="color: white; background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">
+                    {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+                </div>
+            {% endif %}
+        </div> <!-- Paginator -->  
+{% endblock %}
