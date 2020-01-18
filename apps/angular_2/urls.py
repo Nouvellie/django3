@@ -11,7 +11,7 @@ from django.urls import path
 
 urlpatterns = [
 	path(
-        'images',
+        'angular_2/home',
         ImagesView.as_view(),
         name = "angular_2_images",
     ), 

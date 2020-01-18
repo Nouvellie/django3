@@ -11,6 +11,7 @@ from apps.react_1.views import (
 )
 from apps.angular_2.views import (
     ImagesModelViewSet,
+    MixModelViewSet,
     TestingModelViewSet,
 )
 from django.conf import settings
@@ -25,7 +26,7 @@ router.register(r'api/react_1/test', TestViewSet, 'react1_test')
 router.register(r'api/react_1/model', ItemViewSet, 'react1_model')
 router.register(r'api/angular_2/images', ImagesModelViewSet, 'angular2_images')
 router.register(r'api/angular_2/testing', TestingModelViewSet, 'angular2_testing')
-
+router.register(r'api/angular_2/mix', MixModelViewSet, 'angular2_mix')
 
 
 # Every URL must end with slash.

@@ -10,10 +10,12 @@ __created__     =       "01/17/2019 20:44"
 
 from .models import (
 	Images,
+	Mix,
 	Testing,
 )
 from .serializers import (
 	ImagesSerializer,
+	MixSerializer,
 	TestingSerializer,
 )
 from django.shortcuts import render
@@ -32,6 +34,13 @@ class ImagesModelViewSet(ModelViewSet):
 	serializer_class = ImagesSerializer
 
 
+class MixModelViewSet(ModelViewSet):
+
+	permission_classes = (AllowAny,)
+	queryset = Mix.objects.all()
+	serializer_class = MixSerializer
+	
+
 class TestingModelViewSet(ModelViewSet):
 
 	permission_classes = (AllowAny,)
@@ -45,3 +54,9 @@ class ImagesView(ListView):
 	model = Images
 	paginate_by = 1
 	template_name = 'angular_2/images.html'
+
+	def get_context_data(self, **kwargs):
+
+		context = super(ImagesView, self).get_context_data(**kwargs)
+		context['testing'] = Testing.objects.all()
+		return context

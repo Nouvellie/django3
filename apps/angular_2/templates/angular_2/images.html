@@ -8,11 +8,30 @@ ANGULAR-IMAGES
 {% endblock %}
 
 {% block content %}
-<center>
-    {% for ima in images %}
-        <img src="{{ima.images_url}}" alt="" style="width: 600px; height: 400px;">
-    {% endfor %}
-</center>   
+<div class="row text-center">
+    <div class="column col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <center>
+            {% for ima in images %}
+                <img src="{{ima.images_url}}" alt="" style="width: 600px; height: 400px;">
+            {% endfor %}
+        </center>   
+    </div>
+    <div class="column col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <form ng-submit="testAngularAddSubject()">
+
+            <div class="text-left">
+                <h5 style="margin-left: 5%">SUBJECT</h5>
+                {% for test in testing %}                                                   
+                    <input type="radio" ng-model="item.test" value="{{test}}">
+                    <label>{{test}}</label><br>
+                {% endfor %} 
+            </div>   
+            <br><br>
+            <button ng-click="saveSubject(item)" type="submit" class="btn btn-success" style="background: rgba(40, 167, 69, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">ADD</button>            
+        </form>
+        <pre>{{item}}</pre>
+    </div>
+</div>
 <br><br><br>
 
  <!-- Paginator -->

@@ -32,6 +32,9 @@ class Images(models.Model):
 		verbose_name = 'TESTING_ID',
 	)
 
+	def __str__(self):
+		return self.images_url
+
 
 class Testing(models.Model):
 
@@ -49,3 +52,29 @@ class Testing(models.Model):
 
 	def __str__(self):
 		return self.testing_name
+
+
+class Mix(models.Model):
+
+	mix_id = models.AutoField(
+		primary_key = True,
+		db_column = 'MIX_ID',
+		verbose_name = 'MIX_ID',
+	)
+
+	testing_id = models.ForeignKey(
+		'Testing',
+		blank = True,
+		null = True,
+		on_delete = models.DO_NOTHING,
+		db_column = 'TESTING_ID',
+		verbose_name = 'TESTING_ID',
+	)
+	images_id = models.ForeignKey(
+		'Images',
+		blank = True,
+		null = True,
+		on_delete = models.DO_NOTHING,
+		db_column = 'IMAGES_ID',
+		verbose_name = 'IMAGES_ID',
+	)
