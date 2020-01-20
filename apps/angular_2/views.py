@@ -19,9 +19,15 @@ from .serializers import (
 	TestingSerializer,
 )
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
+from rest_framework.status import (
+	HTTP_204_NO_CONTENT,
+	HTTP_400_BAD_REQUEST,
+)
+from rest_framework.views import APIView
 from rest_framework.viewsets import (
 	ModelViewSet,
 	ViewSet,
@@ -46,6 +52,37 @@ class TestingModelViewSet(ModelViewSet):
 	permission_classes = (AllowAny,)
 	queryset = Testing.objects.all()
 	serializer_class = TestingSerializer
+
+
+
+class MixPutView(APIView):
+	
+	permission_classes = (AllowAny,)
+
+	
+	def get(self, request):
+		
+		test_angular_objects = Mix.objects.all()
+		serializer = MixSerializer(
+						 test_angular_objects, 
+						 many = True,
+					 )
+		return Response(serializer.data)
+
+
+	# @csrf_exempt
+	def put(self, request):
+		serializer = MixSerializer(
+						 data = request.data,
+					 )
+		if serializer.is_valid():
+			serializer.save()
+			return Response(serializer.data)
+		else:
+			Response(
+				serializer.errors,
+				status = HTTP_400_BAD_REQUEST,
+			)
 
 
 class ImagesView(ListView):

@@ -1,11 +1,10 @@
-var app = angular.module('testAngular', []);
-app.controller('testAngularController', ['$scope', function($scope) {
+var app = angular.module("testAngular", []);
+app.controller("testAngularController", ['$scope', function($scope, $http) {
 	$scope.mainDict = {};
-	console.log(item);
-	$scope.saveSubject = function(item) {
-		$scope.mainDict = angular.copy(item);
-		console.log(item);
+	$scope.saveSubject = function() {
+		var testingData = {testasd: $scope.item.test, aux: false, imagenumber: imageId}
+		console.log(testingData);
+		// $http
 	};
-}
 
-https://stackoverflow.com/questions/35061614/django-angular-form-submit
+}]);

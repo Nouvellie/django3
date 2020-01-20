@@ -91,4 +91,6 @@ x SignUp form and view ready, but does not work.
 
 - Testing post method with angular.
 - Angular_2 app for testing.
+- Js ready for angular_2.
+- PUT method in progress for Foreign key.
 '''

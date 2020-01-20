@@ -8,12 +8,13 @@ ANGULAR-IMAGES
 {% endblock %}
 
 {% block content %}
+{% for ima in images %}
 <div class="row text-center">
     <div class="column col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <center>
-            {% for ima in images %}
+            
                 <img src="{{ima.images_url}}" alt="" style="width: 600px; height: 400px;">
-            {% endfor %}
+            
         </center>   
     </div>
     <div class="column col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -27,11 +28,15 @@ ANGULAR-IMAGES
                 {% endfor %} 
             </div>   
             <br><br>
-            <button ng-click="saveSubject(item)" type="submit" class="btn btn-success" style="background: rgba(40, 167, 69, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">ADD</button>            
+            <button ng-click="saveSubject()" type="submit" class="btn btn-success" style="background: rgba(40, 167, 69, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">ADD</button>            
         </form>
-        <pre>{{item}}</pre>
+
+<script> 
+    var imageId = {{ima.images_id}};
+</script>
     </div>
 </div>
+{% endfor %}
 <br><br><br>
 
  <!-- Paginator -->
