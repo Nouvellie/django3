@@ -19,7 +19,7 @@ urlpatterns = [
         name = "angular_2_images",
     ), 
     path(
-        'angular_2/mixput',
+        'angular_2/mixput/<int:images_id>',
         MixPutView.as_view(),
         name = "angular2_mixput",
     ),

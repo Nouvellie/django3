@@ -18,7 +18,10 @@ from .serializers import (
 	MixSerializer,
 	TestingSerializer,
 )
-from django.shortcuts import render
+from django.shortcuts import (
+    get_object_or_404,
+    render,
+)
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView
 from rest_framework.permissions import AllowAny
@@ -60,18 +63,18 @@ class MixPutView(APIView):
 	permission_classes = (AllowAny,)
 
 	
-	def get(self, request):
+	def get(self, request, images_id):
 		
-		test_angular_objects = Mix.objects.all()
+		test_angular_objects = get_object_or_404(Mix, images_id = images_id)
 		serializer = MixSerializer(
 						 test_angular_objects, 
-						 many = True,
+						 # many = True,
 					 )
 		return Response(serializer.data)
 
 
 	# @csrf_exempt
-	def put(self, request):
+	def put(self, request, images_id):
 		serializer = MixSerializer(
 						 data = request.data,
 					 )

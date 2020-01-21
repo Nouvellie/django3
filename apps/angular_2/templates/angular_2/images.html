@@ -21,10 +21,10 @@ ANGULAR-IMAGES
         <form ng-submit="testAngularAddSubject()">
 
             <div class="text-left">
-                <h5 style="margin-left: 5%">SUBJECT</h5>
+                <h5 style="margin-left: 41%">SUBJECT</h5><br>
                 {% for test in testing %}                                                   
-                    <input type="radio" ng-model="item.test" value="{{test}}">
-                    <label>{{test}}</label><br>
+                    <input style="margin-left: 41%" type="radio" ng-model="item.test" value="{{test.testing_id}}">
+                    <label style="margin-left: 5%">{{test}}</label><br>
                 {% endfor %} 
             </div>   
             <br><br>

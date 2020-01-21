@@ -78,3 +78,11 @@ class Mix(models.Model):
 		db_column = 'IMAGES_ID',
 		verbose_name = 'IMAGES_ID',
 	)
+
+	class Meta:
+
+		db_table =                  'MIX'
+		managed =                   True
+		verbose_name =              'Mix.'
+		verbose_name_plural =       'Mixs.'
+		unique_together =           ('testing_id', 'images_id',)
