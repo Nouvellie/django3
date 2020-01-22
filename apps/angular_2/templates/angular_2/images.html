@@ -29,6 +29,7 @@ ANGULAR-IMAGES
                     <input style="margin-left: 41%" type="radio" ng-model="item.test" value="{{test.testing_id}}">
                     <label style="margin-left: 5%">{{test}}</label><br>
                 {% endfor %} 
+                <p ng-bind-html = "Message"></p>
             </div>   
             <br><br>
             <button ng-click="saveSubject()" type="submit" class="btn btn-success" style="background: rgba(40, 167, 69, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">ADD</button>            
