@@ -2,7 +2,14 @@ var app = angular.module("testAngular", []);
 app.controller("testAngularController", function($scope, $http, $sce, $timeout) {
 	var createOrNo = false
 	$http.get('/api/angular_2/testing/').then(function(response){
-		var tito = response.data;
+		
+		$scope.testAngularList = [];
+		for (var i = 0; i < response.data.length; i++) {
+			var tests = {};
+			tests.testAngularText = response.data[i].testing_id
+			tests.done = response.data[i].testing_name
+			$scope.testAngularList.push(tests);
+		}
 		
 	});
 	$scope.saveSubject = function(item) {
