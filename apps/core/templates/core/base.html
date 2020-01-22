@@ -12,7 +12,9 @@
 	{% block link %}
     {% endblock %}
 </head>
-<body ng-app="testAngular" ng-controller="testAngularController">
+
+{% block body %}
+{% endblock %}
 	<h2 class="text-right">
 		{% if user.is_authenticated %}
 			{{user}} &nbsp;&nbsp; <a href="{% url 'logout' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 150px;">SIGN OUT</a>&nbsp;
@@ -27,8 +29,6 @@
 	<script src="{% static 'core/js/jquery-3.4.1.min.js' %}"></script>
 	<script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
 	<script src="{% static 'core/js/angular.min.js' %}"></script>
-	<script src="{% static 'angular_1/js/custom.js' %}"></script>
-	<script src="{% static 'angular_2/js/custom.js' %}"></script>
     {% block script %}
     {% endblock %}
 </body>
