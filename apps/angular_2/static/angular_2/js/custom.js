@@ -2,7 +2,6 @@ var app = angular.module("testAngular", []);
 app.controller("testAngularController", function($scope, $http, $sce, $timeout) {
 	var createOrNo = false
 	$http.get('/api/angular_2/testing/').then(function(response){
-		console.log(response.data);
 		var tito = response.data;
 		
 	});
