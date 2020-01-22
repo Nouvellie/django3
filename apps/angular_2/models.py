@@ -35,6 +35,11 @@ class Images(models.Model):
 	def __str__(self):
 		return self.images_url
 
+	class Meta:
+
+
+		ordering = ['images_id']
+
 
 class Testing(models.Model):
 

@@ -19,8 +19,8 @@ from .serializers import (
 	TestingSerializer,
 )
 from django.shortcuts import (
-    get_object_or_404,
-    render,
+	get_object_or_404,
+	render,
 )
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView
@@ -87,6 +87,13 @@ class MixPutView(APIView):
 				status = HTTP_400_BAD_REQUEST,
 			)
 
+	def patch(self, request, images_id):
+		mix_patch = Mix.objects.get(images_id = images_id)
+		testing_object = Testing.objects.get(testing_id = request.data['testing_id'])
+		mix_patch.testing_id = testing_object
+		mix_patch.save()
+		return Response(status = HTTP_204_NO_CONTENT)
+
 
 class ImagesView(ListView):
 
@@ -98,5 +105,26 @@ class ImagesView(ListView):
 	def get_context_data(self, **kwargs):
 
 		context = super(ImagesView, self).get_context_data(**kwargs)
+		# # try:
+		# #     page                = self.request.GET.dict()['page']
+		# # except:
+		# #     page                = 1
+		# # context['diag']         = DiagDict.objects.values().filter(diag_dict_id=page)
+		# # diag_image              = context['diag'][0]['images_id_id']
+		# try:
+		# 	pagemix = int(self.request.GET.dict()['page'])
+		# 	try:
+		# 		context['mixs'] = Mix.objects.get(images_id = pagemix)
+		# 		print(context['mixs'])
+		# 		context['putmix'] = False 
+		# 	except:
+		# 		context['putmix'] = True
+		# except Exception as e:
+		# 	print(e.args)
+		# 	context['mixs'] = Mix.objects.first()
+		# 	print(context['mixs'])
+		# 	pass
+		
+		# print(context['mixs'])
 		context['testing'] = Testing.objects.all()
 		return context
