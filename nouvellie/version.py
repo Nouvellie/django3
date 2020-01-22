@@ -1,4 +1,4 @@
-version = 9.0
+version = 10.0
 angularjs = 1.7
 reactjs = 13.6
 django = 3.0
@@ -93,4 +93,9 @@ x SignUp form and view ready, but does not work.
 - Angular_2 app for testing.
 - Js ready for angular_2.
 - PUT method in progress for Foreign key.
+- JS ready for angular 2.
+- Block body tag added.
+- Patch, Put, Delete, Api and ModelViewSet added for angular 2.
+- If, else on custom.js.
+- Messages with timeout on custom.js.
 '''
