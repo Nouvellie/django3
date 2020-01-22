@@ -18,6 +18,12 @@ ANGULAR-IMAGES
         </center>   
     </div>
     <div class="column col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        
+
+<!-- testing -->
+
+
+<!-- end testing -->
 
         <form ng-submit="testAngularAddSubject()">
 
@@ -29,6 +35,7 @@ ANGULAR-IMAGES
                     <input style="margin-left: 41%" type="radio" ng-model="item.test" value="{{test.testing_id}}">
                     <label style="margin-left: 5%">{{test}}</label><br>
                 {% endfor %} 
+                <br>
                 <p ng-bind-html = "Message"></p>
             </div>   
             <br><br>

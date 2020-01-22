@@ -1,10 +1,17 @@
 var app = angular.module("testAngular", []);
-app.controller("testAngularController", function($scope, $http, $sce) {
+app.controller("testAngularController", function($scope, $http, $sce, $timeout) {
 	var createOrNo = false
-	
+	$http.get('/api/angular_2/testing/').then(function(response){
+		console.log(response.data);
+		var tito = response.data;
+		
+	});
 	$scope.saveSubject = function(item) {
 		if (angular.isUndefined($scope.item)) {
-    		$scope.Message = $sce.trustAsHtml("<div class='text-center'> You must select an option.</div>");		
+			$scope.Message = $sce.trustAsHtml("<div class='text-center' style='color: red;'> You must select an option.</div>");			
+			$timeout(function() {
+				$scope.Message = $sce.trustAsHtml("");			
+			}, 3000);
   		} 
 
   		else {
@@ -13,10 +20,16 @@ app.controller("testAngularController", function($scope, $http, $sce) {
 
 			$http.get('/api/angular_2/mixput/' + imageId).then(function successCallback(response) {
 				$http.patch('/api/angular_2/mixput/' + imageId, testingData)
-				$scope.Message = $sce.trustAsHtml("<div class='text-center'> Successfully updated.</div>");		
+				$scope.Message = $sce.trustAsHtml("<div class='text-center' style='color: blue;'> Successfully updated.</div>");		
+				$timeout(function() {
+					$scope.Message = $sce.trustAsHtml("");			
+				}, 3000);
 			}, function errorCallback(response) {
 				$http.post('/api/angular_2/mix/', testingData)	
-				$scope.Message = $sce.trustAsHtml("<div class='text-center'> Successfully added.</div>");		
+				$scope.Message = $sce.trustAsHtml("<div class='text-center' style='color: blue;'> Successfully added.</div>");		
+				$timeout(function() {
+					$scope.Message = $sce.trustAsHtml("");			
+				}, 3000);
 			});
 		}
 	};
