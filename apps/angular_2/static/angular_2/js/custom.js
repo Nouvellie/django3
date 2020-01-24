@@ -1,4 +1,8 @@
 var app = angular.module("testAngular", []);
+app.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('{$');
+    $interpolateProvider.endSymbol('$}');
+});
 app.controller("testAngularController", function($scope, $http, $sce, $timeout) {
 	var createOrNo = false
 	$http.get('/api/angular_2/testing/').then(function(response){
