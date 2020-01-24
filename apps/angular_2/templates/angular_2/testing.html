@@ -26,7 +26,7 @@ ANGULAR-TESTING
 {% block content %}
 
 <center>
-    
+{$ createOrNo $} <br><br>
     <h2 class="first" ng-class='{"second": name}'>
         <span ng-if='name'>{$name$}</span>
         <span ng-if='name=="Nouvellie"'>!</span>

@@ -4,7 +4,7 @@ app.config(function($interpolateProvider) {
     $interpolateProvider.endSymbol('$}');
 });
 app.controller("testAngularController", function($scope, $http, $sce, $timeout) {
-	var createOrNo = false
+	$scope.createOrNo = 'Enter a name:';
 	$http.get('/api/angular_2/testing/').then(function(response){
 		
 		$scope.testAngularList = [];
