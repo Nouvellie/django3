@@ -1,4 +1,4 @@
-version = 10.0
+version = 11.0
 angularjs = 1.7
 reactjs = 13.6
 django = 3.0
@@ -98,4 +98,8 @@ x SignUp form and view ready, but does not work.
 - Patch, Put, Delete, Api and ModelViewSet added for angular 2.
 - If, else on custom.js.
 - Messages with timeout on custom.js.
+
+11:
+
+- Angular ng-if, ng-class.
 '''

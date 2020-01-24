@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+
+ANGULAR-TESTING
+
+{% endblock %}
+
+{% block link %}
+<style>
+.first {
+    color: blue;
+}
+.second {
+    color: red;
+}
+</style>
+{% endblock %}
+
+
+{% block body %}
+<body ng-app="testAngular" ng-controller="testAngularController">
+{% endblock %}
+
+{% block content %}
+
+{% verbatim %}
+<center>
+    
+    <h2 class="first" ng-class='{"second": name}'>
+        <span ng-if='name'>{{name}}</span>
+        <span ng-if='name=="Nouvellie"'>!</span>
+        <span ng-if='!name'>Name:</span>
+    </h2>
+    <input type="text" ng-model='name'>
+{% endverbatim %}
+    <br><br>
+    <a href="{% url 'home' %}" class="btn btn-success" style="background: rgba(10, 82, 97, 1); border-color: rgba(77, 176, 193, 1); width: 100px;">HOME</a>
+</center>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'angular_2/js/custom.js' %}"></script>
+{% endblock %}

@@ -23,7 +23,10 @@ from django.shortcuts import (
 	render,
 )
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import ListView
+from django.views.generic import (
+	ListView,
+	TemplateView,
+)
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.status import (
@@ -128,3 +131,8 @@ class ImagesView(ListView):
 		# print(context['mixs'])
 		context['testing'] = Testing.objects.all()
 		return context
+
+
+class TestingView(TemplateView):
+
+	template_name = 'angular_2/testing.html'

@@ -8,6 +8,7 @@ __created__     =       "01/17/2019 20:44"
 from .views import (
 	ImagesView,
 	MixPutView,
+    TestingView,
 )
 from django.urls import path
 
@@ -23,4 +24,9 @@ urlpatterns = [
         MixPutView.as_view(),
         name = "angular2_mixput",
     ),
+    path(
+        'angular_2/testingang',
+        TestingView.as_view(),
+        name = "angular_2_tstngng",
+    ), 
 ]
