@@ -25,8 +25,13 @@ ANGULAR-TESTING
 
 {% block content %}
 
+<script> 
+    var imageId = 3;
+</script>
+
 <center>
 {$ createOrNo $} <br><br>
+
     <h2 class="first" ng-class='{"second": name}'>
         <span ng-if='name'>{$name$}</span>
         <span ng-if='name=="Nouvellie"'>!</span>

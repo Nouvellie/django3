@@ -5,7 +5,7 @@ app.config(function($interpolateProvider) {
 });
 app.controller("testAngularController", function($scope, $http, $sce, $timeout) {
 	$scope.createOrNo = 'Enter a name:';
-	$http.get('/api/angular_2/testing/').then(function(response){
+	$http.get('/api/angular_2/testing/').then(function(response) {
 		
 		$scope.testAngularList = [];
 		for (var i = 0; i < response.data.length; i++) {
@@ -14,8 +14,22 @@ app.controller("testAngularController", function($scope, $http, $sce, $timeout) 
 			tests.done = response.data[i].testing_name
 			$scope.testAngularList.push(tests);
 		}
-		
 	});
+	$http.get('/api/angular_2/mix').then(function(response) {
+		$scope.mixes = [];
+		for (var i = 0; i < response.data.length; i++) {
+			
+			if (response.data[i].images_id == imageId) {
+				$scope.mixes.push(
+					{"images_id": imageId, "testing_id": response.data[i]},
+					{key: "testing_id", value: response.data[i].testing_id}
+				)
+				console.log($scope.mixes);
+			}
+			
+		}
+	});
+	
 	$scope.saveSubject = function(item) {
 		if (angular.isUndefined($scope.item)) {
 			$scope.Message = $sce.trustAsHtml("<div class='text-center' style='color: red;'> You must select an option.</div>");			
